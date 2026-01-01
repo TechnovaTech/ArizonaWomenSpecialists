@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function MenopauseSymptomsPost() {
   return (
-    <div className="py-16">
+    <div className="py-16 bg-gray-50 min-h-screen">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link href="/blog" className="text-primary hover:underline mb-8 inline-block">
           ← Back to Blog

@@ -363,7 +363,7 @@ export default function Home() {
               <div className="bg-white rounded-lg p-6">
                 <h3 className="text-2xl font-serif font-bold text-primary mb-3">Maryvale office</h3>
                 <p className="text-gray-600 mb-4 italic">Better yet, see us in person!</p>
-                <p className="text-sm text-blue-600 mb-6">We love our patients, so feel free to visit our office.</p>
+                <p className="text-sm text-gray-600 mb-6">We love our patients, so feel free to visit our office.</p>
                 
                 <div className="mb-6">
                   <h4 className="font-bold text-gray-800 mb-2">ARIZONA WOMENS SPECIALISTS</h4>
@@ -438,7 +438,7 @@ export default function Home() {
               <div className="bg-white rounded-lg p-6">
                 <h3 className="text-2xl font-serif font-bold text-primary mb-3">Arrowhead office</h3>
                 <p className="text-gray-600 mb-4 italic">Better yet, see us in person!</p>
-                <p className="text-sm text-blue-600 mb-6">We love our patients, so feel free to visit our office.</p>
+                <p className="text-sm text-gray-600 mb-6">We love our patients, so feel free to visit our office.</p>
                 
                 <div className="mb-6">
                   <h4 className="font-bold text-gray-800 mb-2">ARIZONA WOMENS SPECIALISTS</h4>

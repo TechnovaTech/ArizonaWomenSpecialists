@@ -1,4 +1,5 @@
 import Navbar from '../components/Navbar'
+import Link from 'next/link'
 
 export default function Services() {
   return (
@@ -32,9 +33,9 @@ export default function Services() {
               <p className="text-text-grey text-sm leading-relaxed mb-8">
                 Women's life stages center around their reproductive organs. Gynecology is an area of medicine that specializes in women's reproductive health. At Arizona Women Specialists (gynecologic) comprehensive gynecologic services with best gynecologist in Phoenix valley and Glendale, from well-woman exams to birth control to managing gynecological conditions like heavy periods. For patient-centered gynecology care, call the office nearest you or schedule an appointment online today with best ob gyn.
               </p>
-              <button className="bg-white border-2 border-primary text-primary px-6 py-2 rounded-full text-sm font-semibold hover:bg-primary hover:text-white transition-colors">
+              <Link href="/" className="bg-white border-2 border-primary text-primary px-6 py-2 rounded-full text-sm font-semibold hover:bg-primary hover:text-white transition-colors inline-block">
                 LEARN MORE
-              </button>
+              </Link>
             </div>
 
             {/* Ultrasounds */}
@@ -43,9 +44,9 @@ export default function Services() {
               <p className="text-text-grey text-sm leading-relaxed mb-8">
                 Ultrasound is a diagnostic imaging tool that uses sound waves to create images of your internal organs. At Arizona Women's Specialists in Glendale and Phoenix, Arizona, BEST OB gyn ( obstetrics and gynecology) practice has one of the most advanced ultrasound machines in assistance with gynecologist, allowing them to get clear images. Call or schedule your ultrasound appointment online today. plan.
               </p>
-              <button className="bg-white border-2 border-primary text-primary px-6 py-2 rounded-full text-sm font-semibold hover:bg-primary hover:text-white transition-colors">
+              <Link href="/" className="bg-white border-2 border-primary text-primary px-6 py-2 rounded-full text-sm font-semibold hover:bg-primary hover:text-white transition-colors inline-block">
                 LEARN MORE
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -57,9 +58,9 @@ export default function Services() {
               <p className="text-text-grey text-sm leading-relaxed mb-8">
                 When feeling unsure about starting or growing your family, you may be considering your birth control options and offer many types of birth control, from the pill to tubal ligation. No matter where you are in your life, the team at Arizona Women's Specialists has a family planning option for you.
               </p>
-              <button className="bg-primary text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-primary-dark transition-colors">
-                MORE SERVICES...
-              </button>
+              <Link href="/" className="bg-white border-2 border-primary text-primary px-6 py-2 rounded-full text-sm font-semibold hover:bg-primary hover:text-white transition-colors inline-block">
+                LEARN MORE
+              </Link>
             </div>
 
             {/* Pap Smears */}
@@ -68,9 +69,9 @@ export default function Services() {
               <p className="text-text-grey text-sm leading-relaxed mb-8">
                 Not too long ago, women needed Pap smears every year to screen for cervical cancer. But with advances in medical knowledge, you no longer need an annual Pap smear with top gynecologist. However, if it's been a while since your last Pap smear or you have concerns about cervical cancer. Schedule your Pap smear by calling the office in Glendale or Phoenix, Arizona, or booking an appointment online today.
               </p>
-              <button className="bg-primary text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-primary-dark transition-colors">
-                MORE SERVICES...
-              </button>
+              <Link href="/" className="bg-white border-2 border-primary text-primary px-6 py-2 rounded-full text-sm font-semibold hover:bg-primary hover:text-white transition-colors inline-block">
+                LEARN MORE
+              </Link>
             </div>
           </div>
         </div>
