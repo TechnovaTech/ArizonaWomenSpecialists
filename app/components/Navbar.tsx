@@ -40,55 +40,11 @@ export default function Navbar() {
               <span className="relative z-10">SERVICES</span>
               <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/5 -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
             </Link>
-            <div 
-              className="relative"
-              onMouseEnter={() => setIsWeightLossDropdownOpen(true)} 
-              onMouseLeave={() => setIsWeightLossDropdownOpen(false)}
-            >
-              <button className="group relative px-4 py-2 text-text-dark hover:text-primary font-semibold transition-all duration-300 overflow-hidden flex items-center">
-                <span className="relative z-10">WEIGHT LOSS</span>
-                <ChevronDown className="w-4 h-4 ml-1" />
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/5 -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
-              </button>
-              <AnimatePresence>
-                {isWeightLossDropdownOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
-                  >
-                    <div 
-                      className="relative"
-                      onMouseEnter={() => setIsGlpDropdownOpen(true)} 
-                      onMouseLeave={() => setIsGlpDropdownOpen(false)}
-                    >
-                      <Link href="/glp-1" className="flex items-center justify-between px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">
-                        <span>GLP-1</span>
-                        <ChevronDown className="w-4 h-4" />
-                      </Link>
-                      <AnimatePresence>
-                        {isGlpDropdownOpen && (
-                          <motion.div
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -10 }}
-                            className="absolute left-full top-0 ml-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
-                          >
-                            <Link href="/medical-weight-loss" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">
-                              Medical Weight Loss Program
-                            </Link>
-                            <Link href="/doctor-mentored" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">
-                              Doctor Mentored
-                            </Link>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+            <Link href="/weight-loss" className="group relative px-4 py-2 text-text-dark hover:text-primary font-semibold transition-all duration-300 overflow-hidden flex items-center">
+              <span className="relative z-10">WEIGHT LOSS</span>
+              <ChevronDown className="w-4 h-4 ml-1" />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/5 -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+            </Link>
             <Link href="/cash-pay" className="group relative px-4 py-2 text-text-dark hover:text-primary font-semibold transition-all duration-300 overflow-hidden">
               <span className="relative z-10">CASH PAY</span>
               <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/5 -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
