@@ -168,9 +168,9 @@ export default function GLP1Page() {
                   transition={{ duration: 0.6 }}
                 >
                   <img 
-                    src="/hero.jpg" 
+                    src="/i1.png" 
                     alt="Weight loss success" 
-                    className="w-full h-auto rounded-lg shadow-lg" 
+                    className="w-full h-auto " 
                   />
                 </motion.div>
                 
