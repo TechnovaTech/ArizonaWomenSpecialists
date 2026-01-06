@@ -88,7 +88,7 @@ export default function MedicalWeightLossPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-xl text-white/80 mb-8 max-w-md mx-auto"
+                className="text-xl text-gray-700 mb-8 max-w-md mx-auto"
               >
                 Conveniently Located To Serve Scottsdale, Phoenix, Chandler, and Glendale
               </motion.p>
@@ -234,7 +234,7 @@ export default function MedicalWeightLossPage() {
                   <img 
                     src="https://www.scottsdaleweightloss.com/wp-content/uploads/2024/10/1-beautiful-slim-womanposing-and-smiling-scottsdale-weightloss-center.webp" 
                     alt="Beautiful slim woman" 
-                    className="w-full h-auto rounded-lg shadow-lg" 
+                    className="w-full h-auto " 
                   />
                 </motion.div>
                 

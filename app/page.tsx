@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 type BlogPost = {
   id: number
@@ -316,7 +317,14 @@ export default function Home() {
             </div>
           )}
 
-          
+          <div className="text-center mt-12">
+            <button 
+              onClick={() => setShowAllPosts(!showAllPosts)}
+              className="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-primary-dark transition-colors inline-block shadow-lg"
+            >
+              {showAllPosts ? 'Show Less' : 'View All Articles'}
+            </button>
+          </div>
         </div>
       </section>
 
@@ -480,7 +488,8 @@ export default function Home() {
         </div>
       </section>
 
-      
+          <Footer />
+
     </div>
   )
 }

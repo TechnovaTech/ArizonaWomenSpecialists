@@ -1,5 +1,5 @@
 import Navbar from '../components/Navbar'
-
+import Footer from '../components/Footer'
 export default function CashPay() {
   return (
     <div>
@@ -90,6 +90,8 @@ export default function CashPay() {
           </div>
         </div>
       </div>
+          <Footer />
+
     </div>
   )
 }
