@@ -1,0 +1,263 @@
+"use client"
+
+import { motion, AnimatePresence } from "framer-motion"
+import { useInView } from "framer-motion"
+import { useRef, useState } from "react"
+import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react"
+
+const testimonials = [
+  {
+    name: "Gina",
+    weight: "Significant Loss",
+    image: "https://www.scottsdaleweightloss.com/wp-content/uploads/2024/10/1-gina-weight-loss-before-and-after-scottsdale-weight-loss-center.webp",
+    quote:
+      "I had no trouble adhering to the meals and they really helped catapult my progress! The classes were so beneficial to me because they helped change my thinking about how I viewed health, nutrition, and fitness. I will always have my relationship with Scottsdale Weight Loss Center. They truly helped me change my life forever.",
+    rating: 5,
+  },
+  {
+    name: "Lauren",
+    weight: "60 lbs",
+    image: "https://www.scottsdaleweightloss.com/wp-content/uploads/2024/10/2-lauren_weight-loss-before-and-after-scottsdale-weight-loss-center.webp",
+    quote:
+      "Dr. Ziltzer and everyone who I have come in contact with at the Scottsdale Weight Loss office have been so encouraging. It is now a year and 2 months later since I started. I am down 60 lbs., which is the average amount a 9-year-old weighs, it is crazy to think I lost a whole person! I feel amazing, I hit my goal weight in November 2021 just before Thanksgiving. Nothing on my body hurts anymore.",
+    rating: 5,
+  },
+  {
+    name: "Chuck",
+    weight: "66 lbs",
+    image: "https://www.scottsdaleweightloss.com/wp-content/uploads/2024/10/3-chuck-h-weight-loss-before-and-after-scottsdale-weight-loss-center.webp",
+    quote:
+      "The best thing I did was call the Scottsdale Weight Loss Center. I have a lot more energy, I'm not hungry, and it feels great. You can take it from me that this is a program that produces results. The staff is always positive, supportive, and never judgmental. Your visits always result in positive reinforcement, no matter if you had a good week or a bad week.",
+    rating: 5,
+  },
+  {
+    name: "Emily",
+    weight: "61.5 lbs",
+    image: "https://www.scottsdaleweightloss.com/wp-content/uploads/2024/10/7-emily_weight-loss-before-and-after-scottsdale-weight-loss-center.webp",
+    quote:
+      "Here I am at the lowest I have been since high school weighing in at 155lbs. I have lost 61.5lbs, 48.5lb of body fat gone, BMI of 39 when I started, to 27.9. I told myself by my 30th birthday I wanted to be confident in the way I look and I owe it all to SWLC. The entire staff is so welcoming and they are rooting for you just as much as you are rooting for yourself.",
+    rating: 5,
+  },
+]
+
+export function Testimonials() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [direction, setDirection] = useState(0)
+
+  const next = () => {
+    setDirection(1)
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length)
+  }
+
+  const prev = () => {
+    setDirection(-1)
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length)
+  }
+
+  const slideVariants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0,
+      scale: 0.8,
+      rotateY: direction > 0 ? 45 : -45,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      scale: 1,
+      rotateY: 0,
+    },
+    exit: (direction: number) => ({
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0,
+      scale: 0.8,
+      rotateY: direction < 0 ? 45 : -45,
+    }),
+  }
+
+  return (
+    <section ref={ref} className="py-40 bg-gradient-to-b from-pink-50 to-white relative overflow-hidden">
+      {/* Animated background orbs */}
+      <motion.div
+        animate={{
+          scale: [1, 1.2, 1],
+          x: [0, 50, 0],
+          opacity: [0.1, 0.2, 0.1],
+        }}
+        transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY }}
+        className="absolute top-1/4 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl"
+      />
+      <motion.div
+        animate={{
+          scale: [1, 1.3, 1],
+          x: [0, -50, 0],
+          opacity: [0.1, 0.15, 0.1],
+        }}
+        transition={{ duration: 10, repeat: Number.POSITIVE_INFINITY, delay: 1 }}
+        className="absolute bottom-1/4 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
+      />
+
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-20"
+        >
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6 text-balance">
+            Patient <span className="text-primary">Success</span> Stories
+          </h2>
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto text-pretty">
+            Real transformations from our Arizona Women Specialists patients
+          </p>
+        </motion.div>
+
+        <div className="max-w-6xl mx-auto">
+          <div className="relative perspective-1000" style={{ perspective: "1000px" }}>
+            <AnimatePresence initial={false} custom={direction} mode="wait">
+              <motion.div
+                key={currentIndex}
+                custom={direction}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{
+                  x: { type: "spring", stiffness: 300, damping: 30 },
+                  opacity: { duration: 0.4 },
+                  scale: { duration: 0.4 },
+                  rotateY: { duration: 0.6 },
+                }}
+                className="card-glass rounded-[2.5rem] p-8 lg:p-12 border-2 border-primary/20 card-elevated relative overflow-hidden"
+                style={{ transformStyle: "preserve-3d" }}
+              >
+                {/* Decorative elements */}
+                <div className="absolute top-0 left-0 w-40 h-40 bg-primary/20 rounded-br-full" />
+                <div className="absolute bottom-0 right-0 w-40 h-40 bg-primary/30 rounded-tl-full" />
+
+                <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center relative z-10">
+                  <div className="lg:col-span-2 flex justify-center">
+                    <div className="relative">
+                      {/* Animated glow effect */}
+                      <motion.div
+                        animate={{
+                          scale: [1, 1.1, 1],
+                          opacity: [0.3, 0.5, 0.3],
+                        }}
+                        transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+                        className="absolute -inset-8 bg-gradient-to-r from-primary/30 to-primary/20 opacity-20 rounded-full blur-2xl"
+                      />
+
+                      <motion.img
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        src={testimonials[currentIndex].image || "/placeholder.svg"}
+                        alt={testimonials[currentIndex].name}
+                        className={`relative w-64 h-64 rounded-lg object-cover shadow-2xl`}
+                      />
+
+                      {/* Animated weight loss badge */}
+                      <motion.div
+                        initial={{ scale: 0, rotate: -45 }}
+                        animate={{ scale: 1, rotate: 0 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 200,
+                          damping: 10,
+                          delay: 0.4,
+                        }}
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        className="absolute -bottom-4 -right-4 bg-primary text-white px-6 py-3 rounded-2xl text-lg font-bold shadow-2xl"
+                      >
+                        -{testimonials[currentIndex].weight}
+                      </motion.div>
+                    </div>
+                  </div>
+
+                  <div className="lg:col-span-3 text-center lg:text-left">
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.3 }}
+                    >
+                      <Quote className="w-12 h-12 text-primary/30 mb-4 mx-auto lg:mx-0" />
+
+                      <div className="flex gap-1 justify-center lg:justify-start mb-6">
+                        {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
+                          <motion.div
+                            key={i}
+                            initial={{ opacity: 0, scale: 0 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.4 + i * 0.1 }}
+                          >
+                            <Star className="w-5 h-5 fill-primary text-primary" />
+                          </motion.div>
+                        ))}
+                      </div>
+
+                      <blockquote className="text-lg md:text-xl text-gray-800 leading-relaxed mb-6 italic font-medium">
+                        "{testimonials[currentIndex].quote}"
+                      </blockquote>
+
+                      <div className="flex items-center justify-center lg:justify-start gap-3">
+                        <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg border-2 border-primary/60">
+                          {testimonials[currentIndex].name[0]}
+                        </div>
+                        <div>
+                          <p className="font-bold text-gray-800 text-lg">
+                            {testimonials[currentIndex].name}
+                          </p>
+                          <p className="text-primary font-semibold text-sm">
+                            Lost {testimonials[currentIndex].weight}
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Navigation Buttons */}
+            <div className="flex justify-center gap-4 mt-12">
+              <button
+                onClick={prev}
+                className="rounded-full w-14 h-14 border-2 border-primary hover:bg-primary hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              <button
+                onClick={next}
+                className="rounded-full w-14 h-14 border-2 border-primary hover:bg-primary hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            </div>
+
+            {/* Dots Indicator */}
+            <div className="flex justify-center gap-3 mt-8">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => {
+                    setDirection(index > currentIndex ? 1 : -1)
+                    setCurrentIndex(index)
+                  }}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentIndex
+                      ? "bg-primary scale-125 shadow-lg"
+                      : "bg-primary/30 hover:bg-primary/60"
+                  }`}
+                  suppressHydrationWarning
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

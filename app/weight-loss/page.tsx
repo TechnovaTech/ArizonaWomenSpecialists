@@ -1,8 +1,11 @@
 'use client'
 
 import { CheckCircle, Star, Users, Clock, Target } from "lucide-react"
+import { motion } from "framer-motion"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
+import { Testimonials } from "../components/testimonials"
+
 
 export default function ProgramsPage() {
   const programs = [
@@ -63,14 +66,28 @@ export default function ProgramsPage() {
         {/* Content Container */}
         <div className="relative z-10 container mx-auto px-4">
           {/* Center Content */}
-          <div className="text-center">
-            <h1 className="text-5xl lg:text-6xl font-light mb-8 tracking-wider text-black" style={{ fontFamily: 'serif' }}>
-              Weight Loss Programs
-            </h1>
-            <p className="text-xl text-white/80 mb-8 max-w-md mx-auto">
+          <div className="relative z-10 container mx-auto px-4">
+            <div className="text-center">
+              <motion.h1 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-7xl lg:text-8xl font-light mb-8 tracking-wider text-gray-800"
+                style={{ fontFamily: 'serif' }}
+              >
+ Weight Loss Programs
+               </motion.h1>
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="text-xl text-gray-700 mb-8 max-w-md mx-auto"
+              >
               Conveniently Located To Serve Scottsdale, Phoenix, Chandler, and Glendale
-            </p>
+              </motion.p>
+            </div>
           </div>
+          
         </div>
         
         {/* Background Pattern */}
@@ -219,12 +236,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* Reviews Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-8">What Our Patients Say</h2>
-          <p className="text-gray-600">Testimonials coming soon...</p>
-        </div>
-      </section>
+      <Testimonials />
       
       <style jsx>{`
         @keyframes scroll {

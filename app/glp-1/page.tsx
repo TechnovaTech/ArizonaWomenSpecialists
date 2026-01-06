@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Navbar from '../components/Navbar'
+import { Testimonials } from "../components/testimonials"
+
 import { CheckCircle, Star, Users, Phone, Calendar, Award, Target, Heart, Zap } from 'lucide-react'
 
 export default function GLP1Page() {
@@ -168,7 +170,7 @@ export default function GLP1Page() {
                   transition={{ duration: 0.6 }}
                 >
                   <img 
-                    src="/i1.png" 
+                    src="/i2.jpg" 
                     alt="Weight loss success" 
                     className="w-full h-auto " 
                   />
@@ -209,36 +211,7 @@ export default function GLP1Page() {
         </section>
 
         {/* Testimonials Section */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-4xl font-bold text-gray-800 mb-12 text-center"
-            >
-              Success Stories
-            </motion.h2>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-              {testimonials.map((testimonial, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white rounded-lg p-6 shadow-lg"
-                >
-                  <div className="text-center mb-4">
-                    <div className="text-3xl font-bold text-primary mb-2">-{testimonial.weight}</div>
-                    <div className="text-lg font-semibold text-gray-800">{testimonial.name}</div>
-                  </div>
-                  <p className="text-gray-600 text-sm italic">"{testimonial.quote}"</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <Testimonials />
 
       </div>
     </>
