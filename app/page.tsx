@@ -195,25 +195,25 @@ export default function Home() {
             
             {/* Right - Content */}
             <div className="order-1 lg:order-2 text-center lg:text-left">
-              <h1 className="text-3xl lg:text-4xl font-serif font-bold text-primary mb-6 leading-tight">
+              <h1 className="text-4xl lg:text-6xl font-serif font-bold text-primary mb-6 leading-tight">
                 ENRICH YOUR PREGNANCY CARE AT
                 <span className="block text-gray-800 mt-2">ARIZONA WOMEN SPECIALISTS</span>
               </h1>
               
-              <p className="text-lg font-light text-gray-600 mb-4 leading-relaxed">
+              <p className="text-xl lg:text-2xl font-light text-gray-600 mb-4 leading-relaxed">
                 Achieve optimal care with personalized attention
               </p>
               
-              <p className="text-base font-medium text-gray-800 mb-8">
+              <p className="text-lg lg:text-xl font-medium text-gray-800 mb-8">
                 Walk in SAME DAY APPOINTMENTS
               </p>
               
               <div className="flex gap-3 justify-center lg:justify-start">
-                <a href="https://patient.klara.com/#/widget/publicScheduling/scheduling/YmM1NTkzMzg4Y2U2MTg5YjMxZDcwNmMyMDllNTJmNzFmMmM3ZmMwYTQyMDFkM2FjNDFlNjQ1NzM3MGQwCjk3MmEkRnd6WU54ckh1TlZ6VW5zZjNEcU5GZz09" target="_blank" className="bg-primary text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-primary-dark transition-all duration-300 shadow-lg">
+                <a href="https://patient.klara.com/#/widget/publicScheduling/scheduling/YmM1NTkzMzg4Y2U2MTg5YjMxZDcwNmMyMDllNTJmNzFmMmM3ZmMwYTQyMDFkM2FjNDFlNjQ1NzM3MGQwCjk3MmEkRnd6WU54ckh1TlZ6VW5zZjNEcU5GZz09" target="_blank" className="bg-primary text-white px-6 py-3 rounded-full text-base font-medium hover:bg-primary-dark transition-all duration-300 shadow-lg">
                   BOOK YOUR APPOINTMENT
                 </a>
                 
-                <Link href="/cash-pay" className="bg-white border-2 border-primary text-primary px-4 py-2 rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-all duration-300 shadow-lg">
+                <Link href="/cash-pay" className="bg-white border-2 border-primary text-primary px-6 py-3 rounded-full text-base font-medium hover:bg-primary hover:text-white transition-all duration-300 shadow-lg">
                   CASH PAY
                 </Link>
               </div>
@@ -226,8 +226,8 @@ export default function Home() {
       <section className="py-20 bg-pink-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-serif font-bold text-gray-800 mb-4">Our Services</h2>
-            <p className="text-lg font-sans text-gray-600">Comprehensive women's healthcare services</p>
+            <h2 className="text-5xl font-serif font-bold text-gray-800 mb-4">Our Services</h2>
+            <p className="text-xl font-sans text-gray-600">Comprehensive women's healthcare services</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
@@ -235,12 +235,12 @@ export default function Home() {
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 cursor-pointer group">
               <img src="/s1.jpg" alt="FREE Pregnancy Test" className="w-full h-64 object-cover" />
               <div className="p-6">
-                <h3 className="text-xl font-serif font-bold text-primary text-center mb-4">FREE Pregnancy Test</h3>
+                <h3 className="text-2xl font-serif font-bold text-primary text-center mb-4">FREE Pregnancy Test</h3>
                 <div className="max-h-0 overflow-hidden group-hover:max-h-96 transition-all duration-500">
-                  <p className="text-text-dark mb-4 text-sm font-sans leading-relaxed">
+                  <p className="text-text-dark mb-4 text-base font-sans leading-relaxed">
                     Arizona Women Specialists offers FREE Pregnancy test with no appointment needed. We provide quick, confidential, and accurate results in a comfortable environment.
                   </p>
-                  <p className="text-lg font-bold text-primary text-center font-sans">
+                  <p className="text-xl font-bold text-primary text-center font-sans">
                     JUST WALK IN! 😊
                   </p>
                 </div>
@@ -251,13 +251,13 @@ export default function Home() {
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 cursor-pointer group">
               <img src="/s2.jpg" alt="Our Mission" className="w-full h-64 object-cover" />
               <div className="p-6">
-                <h3 className="text-xl font-serif font-bold text-primary text-center mb-4">Our Mission</h3>
+                <h3 className="text-2xl font-serif font-bold text-primary text-center mb-4">Our Mission</h3>
                 <div className="max-h-0 overflow-hidden group-hover:max-h-96 transition-all duration-500">
-                  <p className="text-text-dark text-sm font-sans leading-relaxed">
+                  <p className="text-text-dark text-base font-sans leading-relaxed">
                     Arizona Women's Specialists has been proudly serving the Phoenix Valley area for over two decades at offices in Glendale and Phoenix. We offer quality Gynecology and Maternity care to ensure every patient receives the ABCs:
                   </p>
                   <p className="text-center mt-3">
-                    <em className="text-primary font-bold text-lg">"Absolute Best Care"</em>
+                    <em className="text-primary font-bold text-xl">"Absolute Best Care"</em>
                   </p>
                 </div>
               </div>
@@ -267,12 +267,12 @@ export default function Home() {
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 cursor-pointer group">
               <img src="/s3.jpg" alt="Our Team" className="w-full h-64 object-cover" />
               <div className="p-6">
-                <h3 className="text-xl font-serif font-bold text-primary text-center mb-4">Our Team</h3>
+                <h3 className="text-2xl font-serif font-bold text-primary text-center mb-4">Our Team</h3>
                 <div className="max-h-0 overflow-hidden group-hover:max-h-96 transition-all duration-500">
-                  <p className="text-text-dark text-sm font-sans leading-relaxed">
+                  <p className="text-text-dark text-base font-sans leading-relaxed">
                     Our Arizona Women's Specialists team includes amazing ultrasound technicians with a combined experience of more than 40 years. We offer advanced ultrasound services with the ability to send pictures directly to your phone via text messaging.
                   </p>
-                  <p className="text-primary font-semibold text-center mt-3">
+                  <p className="text-primary font-semibold text-center mt-3 text-lg">
                     Experience You Can Trust
                   </p>
                 </div>
@@ -286,8 +286,8 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-serif font-bold text-gray-800 mb-4">Latest Health Insights</h2>
-            <p className="text-lg font-sans text-gray-600">Stay informed with expert advice and health tips</p>
+            <h2 className="text-5xl font-serif font-bold text-gray-800 mb-4">Latest Health Insights</h2>
+            <p className="text-xl font-sans text-gray-600">Stay informed with expert advice and health tips</p>
           </div>
           
           {!showAllPosts ? (
@@ -353,8 +353,8 @@ export default function Home() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-serif font-bold text-gray-800 mb-4">Our Locations</h2>
-            <p className="text-lg font-sans text-gray-600">Visit us at our convenient locations</p>
+            <h2 className="text-5xl font-serif font-bold text-gray-800 mb-4">Our Locations</h2>
+            <p className="text-xl font-sans text-gray-600">Visit us at our convenient locations</p>
           </div>
           
           {/* Maryvale Office */}
