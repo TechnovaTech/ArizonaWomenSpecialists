@@ -9,6 +9,8 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isWeightLossDropdownOpen, setIsWeightLossDropdownOpen] = useState(false)
   const [isGlpDropdownOpen, setIsGlpDropdownOpen] = useState(false)
+  const [isMobileWeightLossOpen, setIsMobileWeightLossOpen] = useState(false)
+  const [isMobileGlpOpen, setIsMobileGlpOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -108,7 +110,38 @@ export default function Navbar() {
             <div className="px-2 pt-2 pb-4 space-y-1">
               <Link href="/" className="block px-3 py-2 text-text-dark hover:text-primary">HOME</Link>
               <Link href="/services" className="block px-3 py-2 text-text-dark hover:text-primary">SERVICES</Link>
-              <Link href="/weight-loss" className="block px-3 py-2 text-text-dark hover:text-primary">WEIGHT LOSS</Link>
+              
+              <div className="relative">
+                <button 
+                  onClick={() => setIsMobileWeightLossOpen(!isMobileWeightLossOpen)}
+                  className="flex items-center justify-between w-full px-3 py-2 text-text-dark hover:text-primary"
+                >
+                  <span>WEIGHT LOSS</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isMobileWeightLossOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {isMobileWeightLossOpen && (
+                  <div className="pl-4 space-y-1">
+                    <button 
+                      onClick={() => setIsMobileGlpOpen(!isMobileGlpOpen)}
+                      className="flex items-center justify-between w-full px-3 py-2 text-gray-600 hover:text-primary"
+                    >
+                      <span>GLP-1</span>
+                      <ChevronDown className={`w-4 h-4 transition-transform ${isMobileGlpOpen ? 'rotate-180' : ''}`} />
+                    </button>
+                    {isMobileGlpOpen && (
+                      <div className="pl-4 space-y-1">
+                        <Link href="/medical-weight-loss" className="block px-3 py-2 text-gray-500 hover:text-primary">
+                          Medical Weight Loss Program
+                        </Link>
+                        <Link href="/doctor-mentored" className="block px-3 py-2 text-gray-500 hover:text-primary">
+                          Doctor Mentored
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+              
               <Link href="/cash-pay" className="block px-3 py-2 text-text-dark hover:text-primary">CASH PAY</Link>
             </div>
           </div>
