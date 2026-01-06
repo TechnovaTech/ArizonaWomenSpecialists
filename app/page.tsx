@@ -161,7 +161,7 @@ export default function Home() {
             {/* Left - Image */}
             <div className="order-2 lg:order-1">
               <img 
-                src="/hero.jpg" 
+                src="/heroimage.jpg" 
                 alt="Pregnancy Care at Arizona Women Specialists" 
                 className="w-full h-[500px] object-cover rounded-2xl shadow-2xl"
               />
@@ -187,9 +187,7 @@ export default function Home() {
                   BOOK YOUR APPOINTMENT
                 </a>
                 
-                <Link href="/weight-loss" className="bg-white border-2 border-primary text-primary px-6 py-3 rounded-full text-base font-medium hover:bg-primary hover:text-white transition-all duration-300 shadow-lg">
-                  WEIGHT LOSS
-                </Link>
+              
                 
                 <Link href="/cash-pay" className="bg-white border-2 border-primary text-primary px-6 py-3 rounded-full text-base font-medium hover:bg-primary hover:text-white transition-all duration-300 shadow-lg">
                   CASH PAY
