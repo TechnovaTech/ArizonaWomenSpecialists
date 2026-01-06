@@ -72,7 +72,7 @@ export default function ProgramsPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-7xl lg:text-8xl font-light mb-8 tracking-wider text-gray-800"
+                className="text-5xl lg:text-6xl font-light mb-8 tracking-wider text-gray-800"
                 style={{ fontFamily: 'serif' }}
               >
  Weight Loss Programs
