@@ -267,26 +267,28 @@ export default function Home() {
           </div>
           
           {!showAllPosts ? (
-            <div className="flex justify-center">
-              <div onClick={() => setSelectedBlog(blogPosts[0])} className="cursor-pointer">
-                <article className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 max-w-sm">
-                  <div className="p-8 text-center">
-                    <div className="w-24 h-24 mx-auto mb-6 bg-gray-100 rounded-full flex items-center justify-center">
-                      <svg width="48" height="48" viewBox="0 0 100 100" className="text-gray-400">
-                        <path d="M30 20 Q50 10 70 20 Q75 30 70 40 Q50 50 30 40 Q25 30 30 20 Z" fill="none" stroke="currentColor" strokeWidth="2"/>
-                        <circle cx="45" cy="35" r="2" fill="currentColor"/>
-                        <path d="M35 60 Q50 70 65 60" fill="none" stroke="currentColor" strokeWidth="2"/>
-                        <path d="M40 75 Q50 80 60 75" fill="none" stroke="currentColor" strokeWidth="2"/>
-                      </svg>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {blogPosts.slice(0, 3).map((post) => (
+                <div key={post.id} onClick={() => setSelectedBlog(post)} className="cursor-pointer">
+                  <article className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div className="p-8 text-center">
+                      <div className="w-24 h-24 mx-auto mb-6 bg-gray-100 rounded-full flex items-center justify-center">
+                        <svg width="48" height="48" viewBox="0 0 100 100" className="text-gray-400">
+                          <path d="M30 20 Q50 10 70 20 Q75 30 70 40 Q50 50 30 40 Q25 30 30 20 Z" fill="none" stroke="currentColor" strokeWidth="2"/>
+                          <circle cx="45" cy="35" r="2" fill="currentColor"/>
+                          <path d="M35 60 Q50 70 65 60" fill="none" stroke="currentColor" strokeWidth="2"/>
+                          <path d="M40 75 Q50 80 60 75" fill="none" stroke="currentColor" strokeWidth="2"/>
+                        </svg>
+                      </div>
+                      <p className="text-gray-500 text-sm mb-2">{post.date}</p>
+                      <h3 className="text-xl font-serif font-bold text-gray-800 mb-4">{post.title}</h3>
+                      <span className="text-primary font-semibold text-sm hover:underline">
+                        Continue Reading
+                      </span>
                     </div>
-                    <p className="text-gray-500 text-sm mb-2">March 20, 2024</p>
-                    <h3 className="text-xl font-serif font-bold text-gray-800 mb-4">Birth Control</h3>
-                    <span className="text-primary font-semibold text-sm hover:underline">
-                      Continue Reading
-                    </span>
-                  </div>
-                </article>
-              </div>
+                  </article>
+                </div>
+              ))}
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -314,14 +316,7 @@ export default function Home() {
             </div>
           )}
 
-          <div className="text-center mt-12">
-            <button 
-              onClick={() => setShowAllPosts(!showAllPosts)}
-              className="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-primary-dark transition-colors inline-block shadow-lg"
-            >
-              {showAllPosts ? 'Show Less' : 'View All Articles'}
-            </button>
-          </div>
+          
         </div>
       </section>
 
