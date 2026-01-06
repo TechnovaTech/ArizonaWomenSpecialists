@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { useState } from 'react'
+import Navbar from './components/Navbar'
 
 type BlogPost = {
   id: number
@@ -150,35 +151,8 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Static Navbar - Always Visible */}
-      <nav className="bg-white relative z-30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center">
-  <img src="/logo.jpg" alt="Arizona Women Specialists Logo" className="h-16 object-contain" />
-</div>
-
-            </div>
-            
-            <div className="flex items-center space-x-8">
-              <Link href="/" className="group relative px-4 py-2 text-text-dark font-semibold transition-all duration-300">
-                HOME
-                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary"></span>
-                <div className="absolute inset-0 bg-primary/5 scale-0 group-hover:scale-100 transition-transform duration-300 rounded-lg"></div>
-              </Link>
-              <Link href="/services" className="group relative px-4 py-2 text-text-dark hover:text-primary font-semibold transition-all duration-300 overflow-hidden">
-                <span className="relative z-10">SERVICES</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/5 -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
-              </Link>
-              <Link href="/cash-pay" className="group relative px-4 py-2 text-text-dark hover:text-primary font-semibold transition-all duration-300 overflow-hidden">
-                <span className="relative z-10">CASH PAY</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/5 -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+      {/* Updated Navbar with dropdown */}
+      <Navbar />
 
       {/* Hero Section */}
       <section className="bg-white py-16">
@@ -208,10 +182,14 @@ export default function Home() {
                 Walk in SAME DAY APPOINTMENTS
               </p>
               
-              <div className="flex gap-3 justify-center lg:justify-start">
+              <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
                 <a href="https://patient.klara.com/#/widget/publicScheduling/scheduling/YmM1NTkzMzg4Y2U2MTg5YjMxZDcwNmMyMDllNTJmNzFmMmM3ZmMwYTQyMDFkM2FjNDFlNjQ1NzM3MGQwCjk3MmEkRnd6WU54ckh1TlZ6VW5zZjNEcU5GZz09" target="_blank" className="bg-primary text-white px-6 py-3 rounded-full text-base font-medium hover:bg-primary-dark transition-all duration-300 shadow-lg">
                   BOOK YOUR APPOINTMENT
                 </a>
+                
+                <Link href="/weight-loss" className="bg-white border-2 border-primary text-primary px-6 py-3 rounded-full text-base font-medium hover:bg-primary hover:text-white transition-all duration-300 shadow-lg">
+                  WEIGHT LOSS
+                </Link>
                 
                 <Link href="/cash-pay" className="bg-white border-2 border-primary text-primary px-6 py-3 rounded-full text-base font-medium hover:bg-primary hover:text-white transition-all duration-300 shadow-lg">
                   CASH PAY
